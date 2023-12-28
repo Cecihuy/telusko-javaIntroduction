@@ -1,12 +1,12 @@
 /**
- * full range of byte is 256. if conversion is larger than range,
- * it will perform modulo(%) by 256
+ * byte out of range result will be promote into higher type (int)
  */
 class Hello{
     public static void main(String[] args){        
-        int a = 259;
-        byte b = (byte) a;  //will perform mod 256
+        byte a = 10;
+        byte b = 30;
+        int result = a * b;     //result is 300 which is byte can't hold
 
-        System.out.println(b);
+        System.out.println(result);
     }
 }
