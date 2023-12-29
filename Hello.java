@@ -5,14 +5,14 @@
 class Hello{
     public static void main(String[] args){
         String day = "Sunday";
+        String result = "";
 
-        switch(day){
-            case "Saturday", "Sunday" ->
-                System.out.println("8am");
-            case "Friday" ->
-                System.out.println("11am");
-            default ->
-                System.out.println("5am");
-        }        
+        result = switch(day){
+            case "Saturday", "Sunday" -> "8am";
+            case "Friday" -> "11am";
+            default -> "5am";
+        };
+
+        System.out.println(result);
     }
 }
