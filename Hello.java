@@ -1,30 +1,18 @@
 /**
- * if 'if' condition is true and without block
- * will be execute only one statement after
+ * try to compare three values which is greatest
+ * and print it 
  */
 class Hello{
     public static void main(String[] args){
-        if(true)
-            System.out.println("Hello");
-        System.out.println("Bye");
+        int x = 8;
+        int y = 7;
+        int z = 9;
 
-        if(false)
-            System.out.println("Hi");
-        System.out.println("Again");
-
-        /*  statement after 'else' keyword only will be 
-            execute if 'if' condition is false
-        */
-        System.out.println("condition if with else");
-
-        if(true)
-            System.out.println("Hello");
+        if(x > y && x > z)
+            System.out.println(x);
+        else if(y > z )
+            System.out.println(y);
         else
-            System.out.println("Bye");
-
-        if(false)
-            System.out.println("Hi");
-        else
-            System.out.println("Again");
+            System.out.println(z);
     }
 }
