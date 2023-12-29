@@ -1,18 +1,12 @@
 /**
- * try to set alarm you want to wakeup
- * based on string value in day
+ * try to print "Hi" 4 times
  */
 class Hello{
     public static void main(String[] args){
-        String day = "Sunday";
-        String result = "";
-
-        result = switch(day){
-            case "Saturday", "Sunday" -> "8am";
-            case "Friday" -> "11am";
-            default -> "5am";
-        };
-
-        System.out.println(result);
+        int n = 1;
+        while(n <= 4){
+            System.out.println("Hi");
+            n++;
+        }
     }
 }
