@@ -3,10 +3,8 @@
  */
 class Hello{
     public static void main(String[] args){
-        int n = 1;
-        do{
+        for(int i = 0; i < 4; i++){
             System.out.println("Hi");
-            n++;
-        }while(n <= 4);
+        }            
     }
 }
