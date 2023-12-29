@@ -1,14 +1,35 @@
 /**
- * try to print 10 if value of n is even
- * or print 9 if value of n is odd
+ * try to print a day of week
+ * based on value in n
  */
 class Hello{
     public static void main(String[] args){
         int n = 5;
-        int result = 0;
-       
-        result = n % 2 == 0 ? 10 : 9;
-        
-        System.out.println(result);
+
+        switch(n){
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Enter 1-7 number");
+        }        
     }
 }
