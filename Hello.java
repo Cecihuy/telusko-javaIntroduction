@@ -1,35 +1,18 @@
 /**
- * try to print a day of week
- * based on value in n
+ * try to set alarm you want to wakeup
+ * based on string value in day
  */
 class Hello{
     public static void main(String[] args){
-        int n = 5;
+        String day = "Sunday";
 
-        switch(n){
-            case 1:
-                System.out.println("Monday");
-                break;
-            case 2:
-                System.out.println("Tuesday");
-                break;
-            case 3:
-                System.out.println("Wednesday");
-                break;
-            case 4:
-                System.out.println("Thursday");
-                break;
-            case 5:
-                System.out.println("Friday");
-                break;
-            case 6:
-                System.out.println("Saturday");
-                break;
-            case 7:
-                System.out.println("Sunday");
-                break;
-            default:
-                System.out.println("Enter 1-7 number");
+        switch(day){
+            case "Saturday", "Sunday" ->
+                System.out.println("8am");
+            case "Friday" ->
+                System.out.println("11am");
+            default ->
+                System.out.println("5am");
         }        
     }
 }
