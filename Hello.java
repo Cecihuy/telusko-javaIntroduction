@@ -1,13 +1,18 @@
 /**
- * post and pre increment result will be different in fetch perform
+ * try different relational operators
  */
 class Hello{
     public static void main(String[] args){        
-        int num = 7;
-        int result = 0;
+        int x = 6;
+        int y = 5;
+        boolean result = true;
 /* uncomment one of these statement */
-//        result = num++;     //fetch the value and then increment. result=7
-//        result = ++num;     //increment and then fetch the value. result=8
+//        result = x < y;
+//        result = x > y;
+//        result = x <= y;
+//        result = x >= y;
+//        result = x == y;
+//        result = x != y;
 
         System.out.println(result);
     }
