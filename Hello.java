@@ -1,14 +1,24 @@
 /**
- * try to print "Hi" 4 times and
- * each "Hi" print "Hello" 2 times
+ * sample class overview
  */
+class Calculator{
+    int a;
+    
+    public int add(int n1, int n2){
+        int r = n1 + n2;
+        return r;
+    }
+}
+
 class Hello{
     public static void main(String[] args){
-        for(int i = 0; i < 4; i++){
-            System.out.println("Hi");
-            for(int j = 0; j < 2; j++){
-                System.out.println("Hello");
-            }
-        }            
+        int num1 = 4;
+        int num2 = 5;
+
+        Calculator calc = new Calculator();
+
+        int result = calc.add(num1, num2);
+
+        System.out.println(result);
     }
 }
