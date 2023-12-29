@@ -28,8 +28,8 @@ class Hello{
         calcs[1] = calc2;
         calcs[2] = calc3;
         
-        for(int i = 0; i < calcs.length; i++){
-            System.out.println(calcs[i].name + " : " + calcs[i].marks);
+        for(Calculator calcul:calcs){
+            System.out.println(calcul.name + " : " + calcul.marks);
         }
     }
 }
