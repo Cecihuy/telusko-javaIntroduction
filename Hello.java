@@ -1,31 +1,35 @@
 /**
- * jagged array is similar to multidimentional
- * but column bracket(elements) is dynamic
+ * sample array of object overview
  */
+class Calculator{
+    int rollNo;
+    String name;
+    int marks;
+}
 class Hello{
     public static void main(String[] args){
-        int nums[][] = new int[3][];
-        nums[0] = new int[3];
-        nums[1] = new int[4];
-        nums[2] = new int[2];
+        Calculator calc1 = new Calculator();
+        calc1.rollNo = 1;
+        calc1.name = "Navin";
+        calc1.marks = 88;
 
-        //inserting random value        
-        for(int i = 0; i < nums.length; i++){
-            for(int j = 0; j < nums[i].length; j++){
-                nums[i][j] = (int)(Math.random()*10);
-            }
-        }
+        Calculator calc2 = new Calculator();
+        calc2.rollNo = 2;
+        calc2.name = "Harsh";
+        calc2.marks = 67;
+
+        Calculator calc3 = new Calculator();
+        calc3.rollNo = 3;
+        calc3.name = "Kiran";
+        calc3.marks = 97;
         
-        //enhance forLoop
-        for(int n[]:nums){
-            for(int m:n){
-                System.out.print(m + " ");
-            }
-            System.out.println();
+        Calculator calcs[] = new Calculator[3];
+        calcs[0] = calc1;
+        calcs[1] = calc2;
+        calcs[2] = calc3;
+        
+        for(int i = 0; i < calcs.length; i++){
+            System.out.println(calcs[i].name + " : " + calcs[i].marks);
         }
-
-        System.out.println();
-        //get specific element
-        System.out.println(nums[1][2]);
     }
 }
