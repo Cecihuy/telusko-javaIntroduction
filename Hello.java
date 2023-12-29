@@ -1,18 +1,14 @@
 /**
- * try to compare three values which is greatest
- * and print it 
+ * try to print 10 if value of n is even
+ * or print 9 if value of n is odd
  */
 class Hello{
     public static void main(String[] args){
-        int x = 8;
-        int y = 7;
-        int z = 9;
-
-        if(x > y && x > z)
-            System.out.println(x);
-        else if(y > z )
-            System.out.println(y);
-        else
-            System.out.println(z);
+        int n = 5;
+        int result = 0;
+       
+        result = n % 2 == 0 ? 10 : 9;
+        
+        System.out.println(result);
     }
 }
