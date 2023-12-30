@@ -1,16 +1,30 @@
 /**
- * sample of StringBuffer overview
+ * static keyword overview
  */
+class Calculator{
+    String brand;
+    int price;
+    static String name;
+
+    public void show(){
+        System.out.println(brand + " : " + price + " : " + name);
+    }
+}
 class Hello{
     public static void main(String[] args){
-        StringBuffer stringBuffer = new StringBuffer("Navin");
-        System.out.println(stringBuffer.capacity());
-        System.out.println(stringBuffer.length());
-        System.out.println(stringBuffer.append(" Reddy"));
-        System.out.println(stringBuffer.deleteCharAt(2));
-        System.out.println(stringBuffer.insert(5, "Java "));
-        stringBuffer.setLength(20);
-        String str = stringBuffer.toString();
-        System.out.println(str);
+        Calculator obj1 = new Calculator();
+        obj1.brand = "Apple";
+        obj1.price = 1500;
+        Calculator.name = "Smartphone";
+
+        Calculator obj2 = new Calculator();
+        obj2.brand = "Samsung";
+        obj2.price = 1700;
+        // obj2.name = "Smartphone";
+
+        Calculator.name = "phone";
+
+        obj1.show();
+        obj2.show();
     }
 }
