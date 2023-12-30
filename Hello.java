@@ -1,21 +1,22 @@
 /**
- * method overriding overview
+ * dynamic method dispatch overview
  */
 class Calculator{
-    public int add(int n1, int n2){       
-        return n1 + n2;
+    public void show(){       
+        System.out.println("in Calculator show");
     }
 }
 class Computer extends Calculator{
-    public int add(int n1, int n2){       
-        return n1 + n2 + 4;
+    public void show(){       
+        System.out.println("in Computer show");
     }
 }
 class Hello{
     public static void main(String[] args) {
-        Computer obj = new Computer();
-        int r1 = obj.add(4, 5);
+        Calculator obj = new Calculator();
+        obj.show();
 
-        System.out.println(r1);
+        obj = new Computer();
+        obj.show();
     }
 }
