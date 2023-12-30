@@ -9,6 +9,9 @@ class Calculator{
     public void show(){
         System.out.println(brand + " : " + price + " : " + name);
     }
+    public static void show1(){
+        System.out.println("in static method");
+    }
 }
 class Hello{
     public static void main(String[] args){
@@ -26,5 +29,7 @@ class Hello{
 
         obj1.show();
         obj2.show();
+
+        Calculator.show1();
     }
 }
