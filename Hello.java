@@ -20,12 +20,13 @@ class Calculator{
     }
 }
 class Hello{
-    public static void main(String[] args){
-        Calculator obj1 = new Calculator();
-        obj1.brand = "Apple";
-        obj1.price = 1500;
-        Calculator.name = "Smartphone";
+    public static void main(String[] args) throws ClassNotFoundException{
+        Class.forName("Calculator");
+        // Calculator obj1 = new Calculator();
+        // obj1.brand = "Apple";
+        // obj1.price = 1500;
+        // Calculator.name = "Smartphone";
 
-        Calculator obj2 = new Calculator();
+        // Calculator obj2 = new Calculator();
     }
 }
