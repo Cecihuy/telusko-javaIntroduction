@@ -1,45 +1,28 @@
 /**
- * constructor overview
+ * 'this' and 'super' keyword overview
+ * try to print below in sequence
+ * in Calculator with int n
+ * in Computer with int n
  */
-class Calculator{    
-    private int age;
-    private String name;
-
+class Calculator extends Object{
     public Calculator(){
-        age = 30;
-        name = "Reddy";
+        System.out.println("in Calculator");
     }
-    public Calculator(int age, String name){
-        this.age=age;
-        this.name=name;
+    public Calculator(int n){       
+        System.out.println("in Calculator with int n");
+    }   
+}
+class Computer extends Calculator{
+    public Computer(){        
+        System.out.println("in Computer");
     }
-
-    public int getAge() {
-        return age;
+    public Computer(int n){
+        super(6);
+        System.out.println("in Computer with int n");
     }
-    public void setAge(int age) {
-        this.age = age;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
 }
 class Hello{
     public static void main(String[] args) {
-        Calculator obj = new Calculator();
-        Calculator obj1 = new Calculator(50, "Java");
-
-        System.out.println(obj.getName() + " : " + obj.getAge());
-        System.out.println(obj1.getName() + " : " + obj1.getAge());
-        
-        // obj.setAge(11);
-        // obj.setName("Navin");
-
-        // System.out.println(obj.getName() + " : " + obj.getAge());
+        Computer obj = new Computer(5);
     }
 }
