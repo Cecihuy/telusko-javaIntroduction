@@ -1,7 +1,8 @@
 /**
  * 'this' and 'super' keyword overview
  * try to print below in sequence
- * in Calculator with int n
+ * in Calculator
+ * in Computer
  * in Computer with int n
  */
 class Calculator extends Object{
@@ -13,11 +14,12 @@ class Calculator extends Object{
     }   
 }
 class Computer extends Calculator{
-    public Computer(){        
+    public Computer(){
+        super();    //'super' method execute constuctor in super class(parent)
         System.out.println("in Computer");
     }
     public Computer(int n){
-        super(6);
+        this();     //'this' method execute constructor in same class
         System.out.println("in Computer with int n");
     }
 }
