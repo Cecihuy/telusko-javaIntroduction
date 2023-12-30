@@ -6,11 +6,17 @@ class Calculator{
     int price;
     static String name;
 
+    public Calculator(){
+        brand = "";
+        price = 200;
+        System.out.println("in constructor");
+    }
+    static{
+        name = "Phone";
+        System.out.println("in static block");
+    }
     public void show(){
         System.out.println(brand + " : " + price + " : " + name);
-    }
-    public static void show1(Calculator obj){
-        System.out.println(obj.brand + " : " + obj.price + " : " + name);
     }
 }
 class Hello{
@@ -21,15 +27,5 @@ class Hello{
         Calculator.name = "Smartphone";
 
         Calculator obj2 = new Calculator();
-        obj2.brand = "Samsung";
-        obj2.price = 1700;
-        // obj2.name = "Smartphone";
-
-        Calculator.name = "phone";
-
-        obj1.show();
-        obj2.show();
-
-        Calculator.show1(obj1);
     }
 }
