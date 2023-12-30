@@ -1,30 +1,18 @@
 /**
- * 'this' and 'super' keyword overview
- * try to print below in sequence
- * in Calculator
- * in Computer
- * in Computer with int n
+ * anonymous object use only once
+ * we can not reuse anonymous object
  */
-class Calculator extends Object{
+class Calculator{
     public Calculator(){
-        System.out.println("in Calculator");
+        System.out.println("object creation proved");
     }
-    public Calculator(int n){       
-        System.out.println("in Calculator with int n");
+    public void show(){       
+        System.out.println("in Calculator show method");
     }   
-}
-class Computer extends Calculator{
-    public Computer(){
-        super();    //'super' method execute constuctor in super class(parent)
-        System.out.println("in Computer");
-    }
-    public Computer(int n){
-        this();     //'this' method execute constructor in same class
-        System.out.println("in Computer with int n");
-    }
 }
 class Hello{
     public static void main(String[] args) {
-        Computer obj = new Computer(5);
+        new Calculator();           //this anonymous object can't be used
+        new Calculator().show();    //way to use the anonymous object. but only once
     }
 }
