@@ -1,27 +1,20 @@
 /**
- * upcasting and downcasting overview
+ * wrapper class overview
  */
-class Calculator{
-    public void show1(){
-        System.out.println("in show 1");
-    }
-}
-class Computer extends Calculator{
-    public void show2(){
-        System.out.println("in show 2");
-    }
-}
 class Hello{
     public static void main(String[] args) {
-        //implicit type casting can work without mention (Calculator)
-        //upcasting
-        Calculator obj = (Calculator) new Computer();
-        obj.show1();
-
-        //downcasting
-        Computer obj1 = (Computer) obj;
-        obj1.show2();
-
+        int num = 7;
+        Integer num1 = num;     //auto-boxing
         
+        System.out.println(num1);
+
+        int num2 = num1;        //auto-unboxing
+
+        System.out.println(num2);
+
+        String str = "12";
+        int num3= Integer.parseInt(str);
+
+        System.out.println(num3 * 2);
     }
 }
