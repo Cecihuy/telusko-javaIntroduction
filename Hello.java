@@ -1,54 +1,27 @@
 /**
- * equals toString hashcode overview
+ * upcasting and downcasting overview
  */
 class Calculator{
-    String model;
-    int price;
-
-    @Override
-    public String toString() {
-        return "Calculator [model=" + model + ", price=" + price + "]";
+    public void show1(){
+        System.out.println("in show 1");
     }
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((model == null) ? 0 : model.hashCode());
-        result = prime * result + price;
-        return result;
+}
+class Computer extends Calculator{
+    public void show2(){
+        System.out.println("in show 2");
     }
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Calculator other = (Calculator) obj;
-        if (model == null) {
-            if (other.model != null)
-                return false;
-        } else if (!model.equals(other.model))
-            return false;
-        if (price != other.price)
-            return false;
-        return true;
-    }    
 }
 class Hello{
     public static void main(String[] args) {
-        Calculator obj1 = new Calculator();
-        obj1.model = "Lenovo Yoga";
-        obj1.price = 1000;
+        //implicit type casting can work without mention (Calculator)
+        //upcasting
+        Calculator obj = (Calculator) new Computer();
+        obj.show1();
 
-        Calculator obj2 = new Calculator();
-        obj2.model = "Lenovo Yoga";
-        obj2.price = 1000;
+        //downcasting
+        Computer obj1 = (Computer) obj;
+        obj1.show2();
 
-        boolean result = obj1.equals(obj2);
-
-        System.out.println(obj1);
-        System.out.println(result);
+        
     }
 }
