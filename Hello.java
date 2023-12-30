@@ -1,32 +1,29 @@
 /**
- * static keyword overview
+ * encapsulation overview
  */
-class Calculator{
-    String brand;
-    int price;
-    static String name;
+class Calculator{    
+    private int age;
+    private String name;
 
-    public Calculator(){
-        brand = "";
-        price = 200;
-        System.out.println("in constructor");
+    public int getAge() {
+        return age;
     }
-    static{
-        name = "Phone";
-        System.out.println("in static block");
+    public void setAge(int age) {
+        this.age = age;
     }
-    public void show(){
-        System.out.println(brand + " : " + price + " : " + name);
+    public String getName() {
+        return name;
     }
+    public void setName(String name) {
+        this.name = name;
+    }    
 }
 class Hello{
-    public static void main(String[] args) throws ClassNotFoundException{
-        Class.forName("Calculator");
-        // Calculator obj1 = new Calculator();
-        // obj1.brand = "Apple";
-        // obj1.price = 1500;
-        // Calculator.name = "Smartphone";
+    public static void main(String[] args){
+        Calculator obj = new Calculator();
+        obj.setAge(11);
+        obj.setName("Navin");
 
-        // Calculator obj2 = new Calculator();
+        System.out.println(obj.getName() + " : " + obj.getAge());
     }
 }
