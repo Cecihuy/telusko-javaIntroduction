@@ -3,11 +3,11 @@
  */
 @FunctionalInterface
 interface Calculator{
-    void show();
+    void show(int i);
 }
 class Hello{
     public static void main(String[] args) {
-        Calculator obj = () -> System.out.println("in show");
-        obj.show();
+        Calculator obj = i -> System.out.println("in show " + i);
+        obj.show(5);
     }
 }
