@@ -1,31 +1,18 @@
 /**
- * interface overview
+ * enum overview
  */
-interface Calculator{
-    void show();
-    void config();
-}
-interface Laptop{
-    void run();
-}
-class Computer implements Calculator, Laptop{
-    public void show() {
-        System.out.println("in show");
-    }
-    public void config() {
-        System.out.println("in config");
-    }
-    public void run() {
-        System.out.println("in run");
-    }    
+enum Calculator{
+    RUNNING, FAILED, PENDING, SUCCESS;
 }
 class Hello{
     public static void main(String[] args) {
-        Calculator obj = new Computer();
-        obj.show();
-        obj.config();
+        Calculator obj = Calculator.FAILED;
+        System.out.println(obj);
+        System.out.println(obj.ordinal());
 
-        Laptop obj1 = new Computer();
-        obj1.run();
+        Calculator[] obj1 = Calculator.values();
+        for(Calculator efl:obj1){
+            System.out.println(efl + " : " + efl.ordinal());
+        }
     }
 }
