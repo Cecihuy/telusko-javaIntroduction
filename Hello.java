@@ -1,21 +1,19 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 /**
- * exception handling overview
+ * taking input from user overview
  */
-class Calculator{
-    public void show() throws ClassNotFoundException{
-        Class.forName("Hello");
-    }
-}
 class Hello{
-    static{
-        System.out.println("class loaded");
-    }
-    public static void main(String[] args) {
-        Calculator obj = new Calculator();
-        try {
-            obj.show();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) throws IOException {
+        System.out.println("Enter a number");
+
+        InputStreamReader in = new InputStreamReader(System.in);
+        BufferedReader bf = new BufferedReader(in);
+
+        int num = Integer.parseInt(bf.readLine());
+        System.out.println(num);
+
+        bf.close();
     }
 }
