@@ -1,10 +1,8 @@
 /**
- * anonymous inner class overview
+ * abstract and anonymous inner class overview
  */
-class Calculator{
-    public void show(){
-        System.out.println("in show...");
-    }
+abstract class Calculator{
+    public abstract void show();
 }
 class Hello{
     public static void main(String[] args) {
