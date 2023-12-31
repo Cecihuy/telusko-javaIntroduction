@@ -1,14 +1,19 @@
 /**
- * lambda expression overview
+ * exception handling overview
  */
-@FunctionalInterface
-interface Calculator{
-    int add(int i, int j);
-}
 class Hello{
     public static void main(String[] args) {
-        Calculator obj = (i, j) -> i + j;
-        int result = obj.add(5,4);
-        System.out.println(result);
+        int i = 0;
+        int j = 0;
+
+        try{
+            j = 18/i;
+        } 
+        catch(Exception e){
+            System.out.println("something went wrong");
+        }
+
+        System.out.println(j);
+        System.out.println("bye");
     }
 }
