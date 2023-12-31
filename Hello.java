@@ -1,6 +1,11 @@
 /**
  * exception handling overview
  */
+class NavinException extends Exception{
+    public NavinException(String string) {
+        super(string);
+    }    
+}
 class Hello{
     public static void main(String[] args) {
         int i = 20;
@@ -9,9 +14,9 @@ class Hello{
         try{
             j = 18 / i;
             if(j == 0)
-                throw new ArithmeticException("i dont want print zero");
+                throw new NavinException("i dont want print zero");
         } 
-        catch(ArithmeticException e){
+        catch(NavinException e){
             j = 18/1;
             System.out.println("thats the default output " + e);
         }        
