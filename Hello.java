@@ -7,7 +7,7 @@ class Calculator{
     public void show(){
         System.out.println("in show...");
     }    
-    class Computer{
+    static class Computer{
         String name;
 
         public void config() {
@@ -20,7 +20,7 @@ class Hello{
         Calculator obj = new Calculator();
         obj.show();
 
-        Calculator.Computer obj1 = obj.new Computer();
+        Calculator.Computer obj1 = new Calculator.Computer();
         obj1.config();
     }
 }
