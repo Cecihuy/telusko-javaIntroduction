@@ -2,18 +2,21 @@
  * interface overview
  */
 interface Calculator{
-    int age = 30;           //final and static
-    String area = "Mumbai"; //final and static
-
-    void show();            //public abstract
-    void config();          //public abstract
+    void show();
+    void config();
 }
-class Computer implements Calculator{
+interface Laptop{
+    void run();
+}
+class Computer implements Calculator, Laptop{
     public void show() {
         System.out.println("in show");
     }
     public void config() {
         System.out.println("in config");
+    }
+    public void run() {
+        System.out.println("in run");
     }    
 }
 class Hello{
@@ -22,7 +25,7 @@ class Hello{
         obj.show();
         obj.config();
 
-        System.out.println(Calculator.age);
-        System.out.println(Calculator.area);
+        Laptop obj1 = new Computer();
+        obj1.run();
     }
 }
