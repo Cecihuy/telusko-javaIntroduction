@@ -1,5 +1,5 @@
 /**
- * functional interface overview
+ * lambda expression overview
  */
 @FunctionalInterface
 interface Calculator{
@@ -7,12 +7,7 @@ interface Calculator{
 }
 class Hello{
     public static void main(String[] args) {
-        Calculator obj = new Calculator()           
-        {
-            public void show(){
-                System.out.println("in show");
-            }
-        };
+        Calculator obj = () -> System.out.println("in show");
         obj.show();
     }
 }
