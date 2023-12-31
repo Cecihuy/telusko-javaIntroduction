@@ -1,30 +1,21 @@
 /**
  * exception handling overview
  */
-class NavinException extends Exception{
-    public NavinException(String string) {
-        super(string);
-    }    
+class Calculator{
+    public void show() throws ClassNotFoundException{
+        Class.forName("Hello");
+    }
 }
 class Hello{
+    static{
+        System.out.println("class loaded");
+    }
     public static void main(String[] args) {
-        int i = 20;
-        int j = 0;
-
-        try{
-            j = 18 / i;
-            if(j == 0)
-                throw new NavinException("i dont want print zero");
-        } 
-        catch(NavinException e){
-            j = 18/1;
-            System.out.println("thats the default output " + e);
-        }        
-        catch(Exception e){
-            System.out.println("something went wrong " + e);
+        Calculator obj = new Calculator();
+        try {
+            obj.show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-
-        System.out.println(j);
-        System.out.println("bye");
     }
 }
