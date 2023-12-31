@@ -1,30 +1,28 @@
 /**
  * interface overview
  */
-abstract class Computer{
-    public abstract void code();
+interface Calculator{
+    int age = 30;           //final and static
+    String area = "Mumbai"; //final and static
+
+    void show();            //public abstract
+    void config();          //public abstract
 }
-class Desktop extends Computer{
-    public void code(){
-        System.out.println("get desktop...");
+class Computer implements Calculator{
+    public void show() {
+        System.out.println("in show");
     }
-}
-class Laptop extends Computer{
-    public void code(){
-        System.out.println("get laptop...");
-    }
-}
-class Developer{
-    public void devApp(Computer computer){
-        computer.code();
-    }
+    public void config() {
+        System.out.println("in config");
+    }    
 }
 class Hello{
     public static void main(String[] args) {
-        Computer desktop = new Desktop();
-        Computer laptop = new Laptop();
+        Calculator obj = new Computer();
+        obj.show();
+        obj.config();
 
-        Developer navin = new Developer();
-        navin.devApp(laptop);
+        System.out.println(Calculator.age);
+        System.out.println(Calculator.area);
     }
 }
