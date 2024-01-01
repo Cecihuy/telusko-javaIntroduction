@@ -1,7 +1,7 @@
 /**
  * Thread overview
  */
-class Calculator extends Thread{
+class Calculator implements Runnable{
     @Override
     public void run(){
         for(int i = 1; i < 10; i++){
@@ -14,7 +14,7 @@ class Calculator extends Thread{
         }
     }
 }
-class Computer extends Thread{
+class Computer implements Runnable{
     @Override
     public void run(){
         for(int i = 1; i < 10; i++){
@@ -29,24 +29,13 @@ class Computer extends Thread{
 }
 class Hello{
     public static void main(String[] args){
-        Calculator obj1 = new Calculator();
-        Computer obj2 = new Computer();
-        
-        // System.out.println(obj1.getPriority());
-        // obj1.setPriority(Thread.MAX_PRIORITY);
-        // System.out.println(obj1.getPriority());
+        Runnable obj1 = new Calculator();
+        Runnable obj2 = new Computer();
 
-        obj1.start();
-        try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {                
-                e.printStackTrace();
-            }
-        obj2.start();
-        try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {                
-                e.printStackTrace();
-            }
+        Thread t1 = new Thread(obj1);
+        Thread t2 = new Thread(obj2);
+
+        t1.start();
+        t2.start();
     }
 }
