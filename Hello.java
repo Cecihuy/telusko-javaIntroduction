@@ -1,26 +1,25 @@
 /**
  * Thread overview
+ * just only add 'synchronized' to prevent other thread
+ * executing method at same time
  */
+class Calculator{
+    int count;
+    public synchronized void increment(){
+        count++;
+    }
+}
 class Hello{
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException{
+        Calculator calc = new Calculator();
         Runnable obj1 = () -> {
-            for(int i = 1; i < 10; i++){
-                System.out.println("hi");
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {                
-                    e.printStackTrace();
-                }
+            for(int i = 0; i < 10000; i++){
+                calc.increment();
             }
         };
         Runnable obj2 = () -> {
-            for(int i = 1; i < 10; i++){
-                System.out.println("hello");
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {                
-                    e.printStackTrace();
-                }
+            for(int i = 0; i < 10000; i++){
+                calc.increment();
             }
         };
 
@@ -29,5 +28,10 @@ class Hello{
 
         t1.start();
         t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println(calc.count);
     }
 }
