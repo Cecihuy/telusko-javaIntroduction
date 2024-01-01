@@ -4,10 +4,10 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * comparator overview
+ * comparable overview
  * try to sort ascending base on age
  */
-class Calculator{
+class Calculator implements Comparable<Calculator>{
     int age;
     String name;
     
@@ -19,6 +19,13 @@ class Calculator{
     public String toString() {
         return "Calculator [age=" + age + ", name=" + name + "]";
     }
+    @Override
+    public int compareTo(Calculator that) {
+        if(this.age > that.age)
+            return 1;
+        else
+            return -1;
+    }
 }
 class Hello{
     public static void main(String[] args) throws InterruptedException{
@@ -28,16 +35,16 @@ class Hello{
         nums.add(new Calculator(18, "Parul"));
         nums.add(new Calculator(20, "Kiran"));
 
-        Comparator<Calculator> com = new Comparator<Calculator>() {
-            public int compare(Calculator i, Calculator j){
-                if(i.age > j.age)
-                    return 1;
-                else
-                    return -1;
-            }
-        };
+        // Comparator<Calculator> com = new Comparator<Calculator>() {
+        //     public int compare(Calculator i, Calculator j){
+        //         if(i.age > j.age)
+        //             return 1;
+        //         else
+        //             return -1;
+        //     }
+        // };
 
-        Collections.sort(nums, com);
+        Collections.sort(nums);
 
         for(Calculator calc:nums)
             System.out.println(calc);
