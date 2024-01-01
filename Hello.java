@@ -1,45 +1,25 @@
+import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 /**
- * comparator overview
- * try to sort ascending base on age
+ * stream overview
+ * try to filter even number,
+ * then multiply 2, then add all
  */
-class Calculator implements Comparable<Calculator>{
-    int age;
-    String name;
-    
-    public Calculator(int age, String name) {
-        this.age = age;
-        this.name = name;
-    }
-    @Override
-    public String toString() {
-        return "Calculator [age=" + age + ", name=" + name + "]";
-    }
-    @Override
-    public int compareTo(Calculator that) {
-        if(this.age > that.age)
-            return 1;
-        else
-            return -1;
-    }
-}
 class Hello{
     public static void main(String[] args) throws InterruptedException{
-        List<Calculator> nums = new ArrayList<Calculator>();
-        nums.add(new Calculator(21, "Navin"));
-        nums.add(new Calculator(12, "John"));
-        nums.add(new Calculator(18, "Parul"));
-        nums.add(new Calculator(20, "Kiran"));
+        List<Integer> nums = Arrays.asList(4, 5, 7, 3, 2, 6);
+        
+        nums.forEach(n -> System.out.println(n));
 
-        Comparator<Calculator> com = (i, j) -> i.age > j.age ?  1 :  -1;                    
+        int sum = 0;
+        for(int n: nums){
+            if(n % 2 == 0){
+                n = n * 2;
+                sum = sum + n;
+            }
+        }
 
-        Collections.sort(nums, com);
-
-        for(Calculator calc:nums)
-            System.out.println(calc);
+        System.out.println(sum);
     }
 }
