@@ -5,38 +5,19 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
- * stream api overview
+ * LVTI local variable type inference overview
  */
+class Calculator{
+
+}
 class Hello{
     public static void main(String[] args){
-        List<Integer> nums = Arrays.asList(4, 5, 7, 3, 2, 6);        
-        
-        Predicate<Integer> p = new Predicate<Integer>() {
-            @Override
-            public boolean test(Integer n) {
-                return n % 2 == 0;
-            }            
-        };
-
-        Function<Integer, Integer> f = new Function<Integer, Integer>() {
-            @Override
-            public Integer apply(Integer n) {
-                return n * 2;
-            }            
-        };        
-
-        int result = nums.stream()
-                        .filter(p)
-                        .map(f)
-                        .reduce(0, (c, e) -> c + e);
-
-        System.out.println(result);
-
-        System.out.println("sorting");
-        Stream<Integer> sortedValues = nums.stream()
-                        .filter(p)
-                        .sorted();
-        
-        sortedValues.forEach(n -> System.out.println(n));
-    }
+        int a = 9;
+        var b = 8;
+        String var = "Navin";
+        int c;
+        var d = 10;
+        var nums = new int[10];
+        var obj = new Calculator();
+    }   
 }
