@@ -1,25 +1,31 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
- * hashmap overview
+ * comparator overview
+ * try to sort ascending base on last digit
  */
 class Hello{
     public static void main(String[] args) throws InterruptedException{
-        Map<String, Integer> students = new HashMap<String, Integer>();
-        students.put("Navin", 56);
-        students.put("Harsh", 23);
-        students.put("Sushil", 67);
-        students.put("Kiran", 92);
-        students.put("Harsh", 45);
+        List<Integer> nums = new ArrayList<Integer>();
+        nums.add(43);
+        nums.add(31);
+        nums.add(72);
+        nums.add(29);
 
-        System.out.println(students.get("Sushil"));
+        Comparator<Integer> com = new Comparator<Integer>() {
+            public int compare(Integer i, Integer j){
+                if(i % 10 > j % 10)
+                    return 1;
+                else
+                    return -1;
+            }
+        };
 
-        System.out.println(students.keySet());
+        Collections.sort(nums, com);
 
-        for(String name:students.keySet()){
-            System.out.println(name + " : " + students.get(name));
-        }
-
+        System.out.println(nums);
     }
 }
