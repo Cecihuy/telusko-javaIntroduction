@@ -1,22 +1,18 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
- * for each overview
- * you may lambda it on Consumer
+ * stream api overview
  */
 class Hello{
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args){
         List<Integer> nums = Arrays.asList(4, 5, 7, 3, 2, 6);        
         
-        Consumer<Integer> con = new Consumer<Integer>() {
-            @Override
-            public void accept(Integer n) {
-                System.out.println(n);
-            }            
-        };
+        int result = nums.stream()
+                        .filter(n -> n % 2 == 0)
+                        .map(n -> n * 2)
+                        .reduce(0, (c, e) -> c + e);
 
-        nums.forEach(con);        
+        System.out.println(result);
     }
 }
