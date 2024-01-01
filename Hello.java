@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * comparable overview
+ * comparator overview
  * try to sort ascending base on age
  */
 class Calculator implements Comparable<Calculator>{
@@ -35,16 +35,9 @@ class Hello{
         nums.add(new Calculator(18, "Parul"));
         nums.add(new Calculator(20, "Kiran"));
 
-        // Comparator<Calculator> com = new Comparator<Calculator>() {
-        //     public int compare(Calculator i, Calculator j){
-        //         if(i.age > j.age)
-        //             return 1;
-        //         else
-        //             return -1;
-        //     }
-        // };
+        Comparator<Calculator> com = (i, j) -> i.age > j.age ?  1 :  -1;                    
 
-        Collections.sort(nums);
+        Collections.sort(nums, com);
 
         for(Calculator calc:nums)
             System.out.println(calc);
