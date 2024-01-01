@@ -5,19 +5,32 @@ import java.util.Comparator;
 
 /**
  * comparator overview
- * try to sort ascending base on last digit
+ * try to sort ascending base on age
  */
+class Calculator{
+    int age;
+    String name;
+    
+    public Calculator(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+    @Override
+    public String toString() {
+        return "Calculator [age=" + age + ", name=" + name + "]";
+    }
+}
 class Hello{
     public static void main(String[] args) throws InterruptedException{
-        List<Integer> nums = new ArrayList<Integer>();
-        nums.add(43);
-        nums.add(31);
-        nums.add(72);
-        nums.add(29);
+        List<Calculator> nums = new ArrayList<Calculator>();
+        nums.add(new Calculator(21, "Navin"));
+        nums.add(new Calculator(12, "John"));
+        nums.add(new Calculator(18, "Parul"));
+        nums.add(new Calculator(20, "Kiran"));
 
-        Comparator<Integer> com = new Comparator<Integer>() {
-            public int compare(Integer i, Integer j){
-                if(i % 10 > j % 10)
+        Comparator<Calculator> com = new Comparator<Calculator>() {
+            public int compare(Calculator i, Calculator j){
+                if(i.age > j.age)
                     return 1;
                 else
                     return -1;
@@ -26,6 +39,7 @@ class Hello{
 
         Collections.sort(nums, com);
 
-        System.out.println(nums);
+        for(Calculator calc:nums)
+            System.out.println(calc);
     }
 }
